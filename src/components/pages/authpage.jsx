@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormStore } from "../zustand/formStore";
 import { supabase } from "../bdd/supabase";
 import { useAuthStore } from "../zustand/authStore";
@@ -14,7 +14,13 @@ export const AuthPage = () => {
     const { updateFormData } = useFormStore();
     const { setUser } = useAuthStore();
     const { setActiveTab } = useActiveTabStore();
-    const { checkAuth } = useAuthStore();
+    const { checkAuth, user } = useAuthStore();
+    useEffect(() => {
+        if (user) {
+            setActiveTab('accueil');
+            return;
+        }
+    }, [user]);
 
     const handleAuthForm = async (e) => {
         handleAuth(e, isSignUp, setLoading, setError, updateFormData, setActiveTab, setUser, createUser, supabase, checkAuth)

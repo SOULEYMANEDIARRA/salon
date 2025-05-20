@@ -23,7 +23,7 @@ export const handleAuth = async (e, isSignUp, setLoading, setError, updateFormDa
             });
             checkAuth();
             updateFormData('email', email.value);
-            setActiveTab('accueil')
+            setActiveTab('confirmation')
             setUser(data.user);
         } else {
             const { data, error } = await supabase.auth.signInWithPassword({

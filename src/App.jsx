@@ -12,6 +12,7 @@ import { useActiveTabStore } from './components/zustand/store';
 import { useAuthStore } from './components/zustand/authStore';
 import { AccountPage } from './components/pages/accountpage';
 import { AdminPage } from './components/pages/adminpage';
+import Confirmation from './components/pages/confirmation';
 import './App.css';
 
 const App = () => {
@@ -122,6 +123,7 @@ const App = () => {
         {activeTab === 'reservation' && <ReservationPage />}
         {activeTab === 'account' && <AccountPage />}
         {activeTab === 'admin' && <AdminPage />}
+        {activeTab === 'confirmation' && <Confirmation />}
       </main>
       {/* Tab Bar */}
       <div className="fixed bottom-0 w-full bg-[#1A1A1A] text-white shadow-lg md:hidden">

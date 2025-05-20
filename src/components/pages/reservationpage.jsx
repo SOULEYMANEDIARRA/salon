@@ -46,7 +46,6 @@ export const ReservationPage = () => {
             setStep(step + 1);
         } else {
             const result = await insertrendezvous(formData);
-            const result2 = await insertreserver(formData);
 
             if (result ) {
                 sendConfirmationEmails(formData);

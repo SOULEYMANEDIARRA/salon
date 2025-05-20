@@ -22,6 +22,14 @@
         box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
 } */
+ .focus{
+    background-color: rgb(212, 175, 55);
+ }
+.pop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(15px);
+}
+
 .section1 {
     display: none;
 }
@@ -121,7 +129,19 @@
 
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
+    .pop .bg-white {
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+    }
+    .pop button {
+        padding: 5px;
+        font-size: .9rem;
+    }
+
+}
+    @media screen and (max-width: 500px) {
     .side-bar .text-xl {
         font-size: 1.2rem !important;
     }
@@ -246,27 +266,45 @@
     .mon-compte span {
         font-size: 0.9rem;
     }
-    .mon-compte i{
+
+    .mon-compte i {
         font-size: 1rem;
     }
-    .mon-compte{
+
+    .mon-compte {
         gap: 2px;
     }
-    main{
+
+    main {
         padding-top: 46px;
     }
-    .h-16{
+
+    .h-16 {
         height: calc(var(--spacing) * 13)
     }
-    .nav2 i{
+
+    .nav2 i {
         font-size: .9rem;
     }
-    .nav2 span{
+
+    .nav2 span {
         font-size: .8rem;
     }
 }
+
 @media screen and (max-width: 375px) {
-    .admin .text-3xl{
+    .admin .text-3xl {
         font-size: 1.2rem;
+    }
+    .pop .bg-white {
+        padding: 10px;
+        width: 95%;
+    }
+    .pop .text-xl{
+        font-size: 1.1rem;
+    }
+    .pop p{
+        font-size: .9rem;
+        margin-bottom: 10px;
     }
 }

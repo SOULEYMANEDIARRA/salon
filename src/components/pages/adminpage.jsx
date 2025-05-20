@@ -5,7 +5,7 @@ const ConfirmationModal = ({ open, title, message, onConfirm, onCancel, loading 
     if (!open) return null;
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40">
+        <div className="pop fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-40">
             <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
                 <h3 className="text-xl font-bold mb-2">{title}</h3>
                 <p className="mb-4">{message}</p>
@@ -189,37 +189,37 @@ export const AdminPage = () => {
                 <h2 className="text-xl font-bold mb-6">Filtres</h2>
                 <nav className="space-y-2">
                     <button
-                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'all' ? 'bg-blue-600' : 'hover:bg-gray-700'}`}
+                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'all' ? 'focus' : 'hover:bg-gray-700'}`}
                         onClick={() => setActiveFilter('all')}
                     >
                         Tous
                     </button>
                     <button
-                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'active-clients' ? 'bg-blue-600' : 'hover:bg-gray-700'}`}
+                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'active-clients' ? 'focus' : 'hover:bg-gray-700'}`}
                         onClick={() => setActiveFilter('active-clients')}
                     >
                         Clients actifs
                     </button>
                     <button
-                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'banned-clients' ? 'bg-blue-600' : 'hover:bg-gray-700'}`}
+                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'banned-clients' ? 'focus' : 'hover:bg-gray-700'}`}
                         onClick={() => setActiveFilter('banned-clients')}
                     >
                         Clients bannis
                     </button>
                     <button
-                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'cancelled-rdv' ? 'bg-blue-600' : 'hover:bg-gray-700'}`}
+                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'cancelled-rdv' ? 'focus' : 'hover:bg-gray-700'}`}
                         onClick={() => setActiveFilter('cancelled-rdv')}
                     >
                         RDV annulés
                     </button>
                     <button
-                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'past-rdv' ? 'bg-blue-600' : 'hover:bg-gray-700'}`}
+                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'past-rdv' ? 'focus' : 'hover:bg-gray-700'}`}
                         onClick={() => setActiveFilter('past-rdv')}
                     >
                         RDV passés
                     </button>
                     <button
-                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'available-rdv' ? 'bg-blue-600' : 'hover:bg-gray-700'}`}
+                        className={`w-full text-left px-4 py-2 rounded ${activeFilter === 'available-rdv' ? 'focus' : 'hover:bg-gray-700'}`}
                         onClick={() => setActiveFilter('available-rdv')}
                     >
                         RDV disponibles
