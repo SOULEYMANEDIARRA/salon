@@ -1,0 +1,272 @@
+@import "tailwindcss";
+/* @media screen and (max-width: 768px) {
+    .account .shadow-md {
+        box-shadow: none;
+        --tw-shadow: none;
+        padding: 0;
+    }
+    .home .text-3xl{
+        font-size: 1.8rem;
+    }
+    .home .text-lg {
+        font-size: 1.2rem;
+    }
+    .home .pb-20 {
+        padding-bottom: 20rem;
+    }
+} */
+
+/* @layer utilities {
+    .shadow-md {
+        --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
+        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+} */
+.section1 {
+    display: none;
+}
+
+.auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth>div {
+    max-width: 500px;
+    max-height: 700px;
+    width: 100%;
+    height: 100%;
+}
+
+.connecter {
+    margin-top: 15px;
+}
+
+.map {
+    z-index: 40;
+}
+
+@media screen and (max-width: 1040px) {
+    .admin .flex-1 {
+        padding: 10px;
+    }
+
+    .admin .w-64 {
+        width: calc(var(--spacing) * 47);
+    }
+
+    .admin .shadow {
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .admin .text-3xl {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        padding-left: 0;
+    }
+
+    .side-bar {
+        padding: 10px;
+    }
+
+    .side-bar button {
+        padding: 10px;
+        margin: 5px 0;
+    }
+
+
+    .ml-64 {
+        margin-left: calc(var(--spacing) * 47);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .admin .w-64 {
+        width: calc(var(--spacing) * 40);
+    }
+
+    .ml-64 {
+        margin-left: calc(var(--spacing) * 40);
+    }
+
+}
+
+@media screen and (max-width: 875px) {
+    .section1 {
+        display: block;
+        box-shadow: none;
+        --tw-shadow: none;
+        padding: 0;
+    }
+
+    .section0 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 770px) {
+
+    .account .col-span-1 {
+        grid-column-start: span 2;
+        grid-column-end: span 2;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        padding-top: 52px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .side-bar .text-xl {
+        font-size: 1.2rem !important;
+    }
+
+    .side-bar button {
+        padding: 5px;
+        font-size: .9rem;
+        padding-right: 0;
+    }
+
+    .side-bar {
+        padding: 5px;
+    }
+
+    .admin .text-3xl {
+        font-size: 1.3rem;
+        margin-bottom: 5px;
+    }
+
+    .admin .text-xl {
+        font-size: 1.2rem;
+        margin-bottom: 5px !important;
+    }
+
+    .admin .flex-1 {
+        padding: 5px;
+    }
+
+    .admin .shadow {
+        padding: 5px;
+    }
+
+    .admin .p-4 {
+        padding: 5px;
+    }
+
+    .admin .w-64 {
+        width: calc(var(--spacing) * 30);
+    }
+
+
+    .ml-64 {
+        margin-left: calc(var(--spacing) * 30);
+    }
+
+    .espace-admin {
+        overflow-x: auto;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    /* .account .shadow-md {
+        box-shadow: none;
+        --tw-shadow: none;
+        padding: 0;
+    } */
+
+    .home .text-3xl {
+        font-size: 1.5rem;
+    }
+
+    .home .text-lg {
+        font-size: 1rem;
+    }
+
+    .home .pb-20 {
+        padding-bottom: 15rem;
+    }
+
+    .home .text-2xl {
+        font-size: 1.3rem;
+    }
+
+    .home .text-xl {
+        font-size: 1.3rem;
+    }
+
+    .reserve,
+    .service,
+    .about,
+    .contact,
+    .auth,
+    .account {
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .reserve .shadow-md,
+    .contact .bg-white,
+    .auth .bg-white,
+    .account .bg-white {
+        box-shadow: none;
+        --tw-shadow: none;
+        padding: 0;
+    }
+
+    .contact .mb-8,
+    .auth .mb-8 {
+        margin-bottom: 30px;
+    }
+
+    .reserve .text-3xl,
+    .service .text-3xl,
+    .about .text-3xl,
+    .contact .text-3xl,
+    .auth .text-3xl {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+    .sentana {
+        font-size: 0.9rem;
+    }
+
+    .mon-compte span {
+        font-size: 0.9rem;
+    }
+    .mon-compte i{
+        font-size: 1rem;
+    }
+    .mon-compte{
+        gap: 2px;
+    }
+    main{
+        padding-top: 46px;
+    }
+    .h-16{
+        height: calc(var(--spacing) * 13)
+    }
+    .nav2 i{
+        font-size: .9rem;
+    }
+    .nav2 span{
+        font-size: .8rem;
+    }
+}
+@media screen and (max-width: 375px) {
+    .admin .text-3xl{
+        font-size: 1.2rem;
+    }
+}
