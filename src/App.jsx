@@ -5,6 +5,7 @@ import { HomePage } from './components/pages/homepage';
 import { ServicesPage } from './components/pages/servicespage';
 import { ToastContainer } from 'react-toastify';
 import { AboutPage } from './components/pages/aboutpage';
+import 'react-toastify/dist/ReactToastify.css';
 import { ContactPage } from './components/pages/contactpage';
 import { ReservationPage } from './components/pages/reservationpage';
 import { AuthPage } from './components/pages/authpage';
@@ -36,11 +37,11 @@ const App = () => {
     <div className="relative min-h-screen bg-gray-50 text-gray-900 font-sans">
       {/* Nav Bar */}
       <nav className="nav fixed w-full top-0 z-50 bg-[#1A1A1A] text-white shadow-md">
-        {/* ToastContainer pour notifications globales si besoin */}
-        <ToastContainer />
+        {/* ToastContainer pour notifications globales */}
+
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center">
-            <h1  onClick={handleAdminTab} className="sentana text-xl font-bold cursor-pointer">
+            <h1 onClick={handleAdminTab} className="sentana text-xl font-bold cursor-pointer">
               <span className="text-[#D4AF37] ">SENTANA</span>BARBER
             </h1>
           </div>
@@ -165,8 +166,18 @@ const App = () => {
           </button>
         </div>
       </div>
-      <ToastContainer />
-    </div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />    </div>
   );
 };
 

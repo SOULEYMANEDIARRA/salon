@@ -67,13 +67,13 @@ export const AdminPage = () => {
             case 'past-rdv':
                 return {
                     users: [],
-                    rendezvous: rendezvous.filter(rdv => new Date(rdv.date) < now)
+                    rendezvous: rendezvous.filter(rdv => new Date(`${rdv.date}T${rdv.time}`) < now)
                 };
             case 'available-rdv':
                 return {
                     users: [],
                     rendezvous: rendezvous.filter(rdv =>
-                        rdv.status !== 'cancelled' && new Date(rdv.date) >= now
+                        rdv.status !== 'cancelled' && new Date(`${rdv.date}T${rdv.time}`) >= now
                     )
                 };
             default:

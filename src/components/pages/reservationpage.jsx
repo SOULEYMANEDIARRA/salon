@@ -24,6 +24,12 @@ export const ReservationPage = () => {
             return;
         }
 
+        // Vérifier si le compte est banni
+        if (user.profile.banned) {
+            toast.error('Votre compte a été banni. Vous ne pouvez pas réserver de rendez-vous.');
+            return;
+        }
+
         // Vérifier si la date est passée
         if (step === 2) {
             const selectedDate = new Date(`${formData.date}T${formData.time}`);

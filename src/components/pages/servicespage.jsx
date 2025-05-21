@@ -10,6 +10,7 @@ import rasagetraditionnel from "../../../public/rasagetraditionnel.jpg";
 import tailledebarbe from "../../../public/tailledebarbe.jpg";
 import soinvisage from "../../../public/soinvisage.jpg";
 import massagecranien from "../../../public/massagecranien.jpg";
+import { toast } from "react-toastify";
 
 export const ServicesPage = () => {
     const { setStep } = useStepStore();
@@ -20,6 +21,11 @@ export const ServicesPage = () => {
     const handleSubmit = (service) => {
         if (!user) {
             setActiveTab('auth');
+            return;
+        }
+
+        if (user.profile.banned) {
+            toast.error('Votre compte a été banni. Vous ne pouvez pas réserver de rendez-vous.');
             return;
         }
         updateFormData('service', service.name + " " + service.price);
