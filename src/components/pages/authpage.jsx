@@ -4,7 +4,7 @@ import { supabase } from "../bdd/supabase";
 import { useAuthStore } from "../zustand/authStore";
 import { useActiveTabStore } from "../zustand/store";
 import { createUser } from "../bdd/insert/createUser";
-import { handleAuth } from "../controler/signup";
+import { handleAuth } from "../../controler/signup";
 
 export const AuthPage = () => {
     const [isSignUp, setIsSignUp] = useState(false);

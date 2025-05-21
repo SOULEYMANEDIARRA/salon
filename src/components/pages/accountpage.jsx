@@ -206,8 +206,8 @@ export const AccountPage = () => {
 
 {/* Popup de confirmation d'annulation */}
 {showCancelModal && selectedRdv && (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-        <div className="pop bg-white p-6 rounded shadow-lg w-full max-w-sm">
+    <div className="pop fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="bg-white p-6 rounded shadow-lg w-full max-w-sm">
             <h4 className="text-lg font-semibold mb-4 text-center">Confirmer l'annulation</h4>
             <p className="mb-4 text-center">Voulez-vous vraiment annuler le rendez-vous du <span className="font-semibold">{selectedRdv.date}</span> à <span className="font-semibold">{selectedRdv.time}</span> pour <span className="font-semibold">{selectedRdv.service}</span> ?</p>
             <div className="flex justify-between gap-4">

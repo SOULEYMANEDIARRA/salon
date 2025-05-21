@@ -58,7 +58,7 @@ export const ContactPage = () => {
                     </div>
                 </div>
 
-                <div className="bg-white rounded-lg shadow-md p-6">
+                {/* <div className="bg-white rounded-lg shadow-md p-6">
                     <h2 className="text-xl font-semibold mb-6">Envoyez-nous un message</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
@@ -119,7 +119,7 @@ export const ContactPage = () => {
                             Envoyer
                         </button>
                     </form>
-                </div>
+                </div> */}
             </div>
         </div>
     );

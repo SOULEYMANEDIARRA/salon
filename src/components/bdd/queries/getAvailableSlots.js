@@ -58,6 +58,5 @@ export const getAvailableSlots = async (date) => {
     // Supprimer les ":00" à la fin de chaque créneau
     availableSlots = availableSlots.map(slot => slot.replace(':00', ''));
     // Retourne les créneaux disponibles en excluant les créneaux occupés
-    console.log(availableSlots);
     return availableSlots;
 };

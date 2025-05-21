@@ -9,7 +9,6 @@ import { useAuthStore } from "../zustand/authStore";
 import { sendConfirmationEmails } from "../email/sendemail";
 import { useActiveTabStore } from "../zustand/store";
 import { toast } from "react-toastify";
-import { insertreserver } from "../bdd/queries/crenaux";
 
 export const ReservationPage = () => {
     const { step, setStep } = useStepStore();
@@ -89,9 +88,9 @@ export const ReservationPage = () => {
     }
     useEffect(() => {
         if (user) {
-            updateFormData("email", user.email)
-            updateFormData("phone", user.profile.phone)
-            updateFormData("name", user.profile.first_name + " " + user.profile.last_name)
+            updateFormData('email', user.email)
+            updateFormData('phone', user.profile.phone)
+            updateFormData('name', user.profile.first_name + " " + user.profile.last_name)
         }
     }, [user])
 

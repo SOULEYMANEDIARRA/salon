@@ -22,9 +22,10 @@
         box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
 } */
- .focus{
+.focus {
     background-color: rgb(212, 175, 55);
- }
+}
+
 .pop {
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(15px);
@@ -135,13 +136,15 @@
         width: 90%;
         margin: auto;
     }
+
     .pop button {
         padding: 5px;
         font-size: .9rem;
     }
 
 }
-    @media screen and (max-width: 500px) {
+
+@media screen and (max-width: 500px) {
     .side-bar .text-xl {
         font-size: 1.2rem !important;
     }
@@ -296,14 +299,17 @@
     .admin .text-3xl {
         font-size: 1.2rem;
     }
+
     .pop .bg-white {
         padding: 10px;
         width: 95%;
     }
-    .pop .text-xl{
+
+    .pop .text-xl {
         font-size: 1.1rem;
     }
-    .pop p{
+
+    .pop p {
         font-size: .9rem;
         margin-bottom: 10px;
     }
