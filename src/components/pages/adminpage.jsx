@@ -73,7 +73,7 @@ export const AdminPage = () => {
                 return {
                     users: [],
                     rendezvous: rendezvous.filter(rdv =>
-                        rdv.status !== 'cancelled' && new Date(`${rdv.date}T${rdv.time}`) >= now
+                        rdv.status !== 'cancelled' && new Date(`${rdv.date}T${rdv.time}`) > now
                     )
                 };
             default:
@@ -95,7 +95,7 @@ export const AdminPage = () => {
                     { data: rdvData, error: rdvError }
                 ] = await Promise.all([
                     supabase.from('users').select('*'),
-                    supabase.from('rendezvous').select('*')
+                    supabase.from('rendezvous').select('*').order('date', { ascending: false }).order('time', { ascending: false })
                 ]);
 
                 if (usersError) throw usersError;
