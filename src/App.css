@@ -1,27 +1,10 @@
 @import "tailwindcss";
-/* @media screen and (max-width: 768px) {
-    .account .shadow-md {
-        box-shadow: none;
-        --tw-shadow: none;
-        padding: 0;
-    }
-    .home .text-3xl{
-        font-size: 1.8rem;
-    }
-    .home .text-lg {
-        font-size: 1.2rem;
-    }
-    .home .pb-20 {
-        padding-bottom: 20rem;
-    }
-} */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* @layer utilities {
-    .shadow-md {
-        --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-} */
+body, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, select, label, span, div {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
 .focus {
     background-color: rgb(212, 175, 55);
 }

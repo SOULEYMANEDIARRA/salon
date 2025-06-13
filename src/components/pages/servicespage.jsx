@@ -3,19 +3,14 @@ import { useStepStore } from "../zustand/store";
 import { useActiveTabStore } from "../zustand/store";
 import { useFormStore } from "../zustand/formStore";
 import { useAuthStore } from "../zustand/authStore";
-import coupeclassique from "../../../public/coupeclassique.jpg";
-import coupetendance from "../../../public/coupetendance.jpg";
-import degrade from "../../../public/degrade.jpg";
-import rasagetraditionnel from "../../../public/rasagetraditionnel.jpg";
-import tailledebarbe from "../../../public/tailledebarbe.jpg";
-import soinvisage from "../../../public/soinvisage.jpg";
-import massagecranien from "../../../public/massagecranien.jpg";
 import { toast } from "react-toastify";
+import { useServicesStore } from "../zustand/servicesStore";
 
 export const ServicesPage = () => {
     const { setStep } = useStepStore();
     const { setActiveTab } = useActiveTabStore();
     const { updateFormData } = useFormStore();
+    const { allServices } = useServicesStore();
     const { user } = useAuthStore();
 
     const handleSubmit = (service) => {
@@ -28,77 +23,11 @@ export const ServicesPage = () => {
             toast.error('Votre compte a été banni. Vous ne pouvez pas réserver de rendez-vous.');
             return;
         }
-        updateFormData('service', service.name + " " + service.price);
+        // updateFormData('service', service.name + " " + service.price);
         setActiveTab('reservation');
-        setStep(2);
+        // setStep(2);
     };
 
-    const allServices = [
-        {
-            category: "Coupes",
-            items: [
-                {
-                    name: "Coupe Classique",
-                    description: "Coupe traditionnelle avec finitions soignées",
-                    duration: "30 min",
-                    price: "1000 FCFA",
-                    image: coupeclassique
-                },
-                {
-                    name: "Coupe Tendance",
-                    description: "Coupe moderne adaptée aux dernières tendances",
-                    duration: "45 min",
-                    price: "1500 FCFA",
-                    image: coupetendance
-                },
-                {
-                    name: "Dégradé",
-                    description: "Dégradé précis avec transitions parfaites",
-                    duration: "30 min",
-                    price: "1500 FCFA",
-                    image: degrade
-                }
-            ]
-        },
-        {
-            category: "Barbe",
-            items: [
-                {
-                    name: "Taille de Barbe",
-                    description: "Taille et entretien de barbe avec finitions",
-                    duration: "30 min",
-                    price: "1500 FCFA",
-                    image: tailledebarbe
-                },
-                {
-                    name: "Rasage Traditionnel",
-                    description: "Rasage à l'ancienne avec serviette chaude",
-                    duration: "30 min",
-                    price: "1000 FCFA",
-                    image: rasagetraditionnel
-                }
-            ]
-        },
-        {
-            category: "Soins",
-            items: [
-                {
-                    name: "Soin Visage",
-                    description: "Soin complet avec massage du visage",
-                    duration: "45 min",
-                    price: "3500 FCFA",
-                    image: soinvisage
-                },
-                {
-                    name: "Massage Crânien",
-                    description: "Massage relaxant du cuir chevelu",
-                    duration: "20 min",
-                    price: "1500 FCFA",
-                    image: massagecranien
-                }
-            ]
-        }
-    ];
 
     const [selectedCategory, setSelectedCategory] = useState(allServices[0].category);
 
@@ -142,7 +71,7 @@ export const ServicesPage = () => {
                                     <span><i className="far fa-clock mr-2"></i>{service.duration}</span>
                                     <span className="text-lg font-semibold text-[#1B264F]">{service.price}</span>
                                 </div>
-                                <button onClick={() => handleSubmit(service) } className="cursor-pointer w-full py-2 bg-[#D4AF37] text-[#1A1A1A] font-medium rounded-button hover:bg-opacity-90 transition-colors">
+                                <button onClick={() => handleSubmit(service)} className="cursor-pointer w-full py-2 bg-[#D4AF37] text-[#1A1A1A] font-medium rounded-button hover:bg-opacity-90 transition-colors">
                                     Réserver
                                 </button>
                             </div>

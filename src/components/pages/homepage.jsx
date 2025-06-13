@@ -1,26 +1,13 @@
-// import { services } from "./variable";
-// import { testimonials } from "./variable";
-// import { openingHours } from "./variable";
 import { useActiveTabStore } from "../zustand/store";
 import background from "../../../public/background.jpg";
-import image1 from "../../../public/image1.jpg";
-import { EMAIL, openingHours, PHONE, services, testimonials } from "./variable";
+import { openingHours, services, testimonials } from "./variable";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-
-// Correction du marker leaflet par défaut
-// (Supprimé car require n'est pas supporté côté client dans React)
-
-
-// Coordonnées du salon (exemple : Bamako, à adapter)
-const SALON_COORDS = [12.578766, -8.005986]; // Remplace par la localisation exacte si besoin
-const SALON_ADDRESS = "HXHV+GJ2 Bamako";
-const GOOGLE_MAPS_URL = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SALON_ADDRESS)}`;
-
+import { useInfoStore } from "../zustand/info";
 
 export const HomePage = () => {
     const { setActiveTab } = useActiveTabStore();
+    const {phone, address, email, SALON_COORDS, SALON_ADDRESS, GOOGLE_MAPS_URL, title } = useInfoStore();
     return (
         <div className="home flex flex-col">
             {/* Hero Banner */}
@@ -81,7 +68,7 @@ export const HomePage = () => {
                         </div>
                         <div className="md:w-1/2">
                             <img
-                                src={image1}
+                                src={'image1.jpg'}
                                 alt="Barbier professionnel"
                                 className="w-full h-auto rounded-lg shadow-lg"
                             />
@@ -138,7 +125,7 @@ export const HomePage = () => {
                         </div>
                         <div className="bg-[#1A1A1A] text-white p-4 text-center">
                             <p className="font-medium">Réservation recommandée</p>
-                            <p className="text-sm mt-1">Téléphone: {PHONE}</p>
+                            <p className="text-sm mt-1">Téléphone: {phone}</p>
                         </div>
                     </div>
                 </div>
@@ -163,19 +150,19 @@ export const HomePage = () => {
                         </div>
                     </div>
                     <div className="md:w-1/2 md:pl-12">
-                        <h3 className="text-xl font-bold mb-4">SENTANA BARBERSHOP</h3>
+                        <h3 className="text-xl font-bold mb-4">{title}</h3>
                         <div className="mb-4">
                             <p className="flex items-center mb-2">
                                 <i className="fas fa-map-marker-alt w-6 text-[#D4AF37]"></i>
-                                <span> Golf prét de FitiniMarket </span>
+                                <span> {address} </span>
                             </p>
                             <p className="flex items-center mb-2">
                                 <i className="fas fa-phone-alt w-6 text-[#D4AF37]"></i>
-                                <span>{PHONE}</span>
+                                <span>{phone}</span>
                             </p>
                             <p className="flex items-center">
                                 <i className="fas fa-envelope w-6 text-[#D4AF37]"></i>
-                                <span>{EMAIL}</span>
+                                <span>{email}</span>
                             </p>
                         </div>
                         <a href={GOOGLE_MAPS_URL} target="_blank" rel="noopener noreferrer">

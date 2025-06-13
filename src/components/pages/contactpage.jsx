@@ -1,24 +1,41 @@
 import { useState } from 'react';
-import { EMAIL, openingHours, PHONE, SALON_ADDRESS } from './variable';
+import { openingHours } from './variable';
+import { useInfoStore } from '../zustand/info';
+import { useActiveTabStore } from '../zustand/store';
+import { toast } from 'react-toastify';
+import { inputCheck } from '../../controler/inputCheck';
+import { sendConfirmationEmails } from '../email/sendConfirmationEmails';
+import { useAuthStore } from '../zustand/authStore';
 
 export const ContactPage = () => {
+    const { user } = useAuthStore();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         message: ''
     });
-
+    const { phone, email, address } = useInfoStore();
+    const { setActiveTab } = useActiveTabStore();
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission
+
+        if (inputCheck(formData)) {
+            const errorElement = document.querySelector('.error-message');
+            errorElement.textContent = inputCheck(formData);
+            return
+        }
+        sendConfirmationEmails(formData, email);
+        toast.success('Message envoyé avec succès');
+        setActiveTab('accueil');
     };
 
+    const tab = ['name', 'email', 'phone', 'message'];
     const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
+        const { name, value } = e.target;
+        if (tab.includes(name)) {
+            setFormData(prev => ({ ...prev, [name]: value }));
+        }
     };
 
     return (
@@ -32,15 +49,15 @@ export const ContactPage = () => {
                         <div className="space-y-4">
                             <div className="flex items-center">
                                 <i className="fas fa-map-marker-alt text-[#D4AF37] w-8"></i>
-                                <p>{SALON_ADDRESS}</p>
+                                <p>{address}</p>
                             </div>
                             <div className="flex items-center">
                                 <i className="fas fa-phone-alt text-[#D4AF37] w-8"></i>
-                                <p>{PHONE}</p>
+                                <p>{phone}</p>
                             </div>
                             <div className="flex items-center">
                                 <i className="fas fa-envelope text-[#D4AF37] w-8"></i>
-                                <p>{EMAIL}</p>
+                                <p>{email}</p>
                             </div>
                         </div>
                     </div>
@@ -58,7 +75,7 @@ export const ContactPage = () => {
                     </div>
                 </div>
 
-                {/* <div className="bg-white rounded-lg shadow-md p-6">
+                <div className="bg-white rounded-lg shadow-md p-6">
                     <h2 className="text-xl font-semibold mb-6">Envoyez-nous un message</h2>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
@@ -119,7 +136,7 @@ export const ContactPage = () => {
                             Envoyer
                         </button>
                     </form>
-                </div> */}
+                </div>
             </div>
         </div>
     );

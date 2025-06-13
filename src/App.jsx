@@ -15,10 +15,12 @@ import { AccountPage } from './components/pages/accountpage';
 import { AdminPage } from './components/pages/adminpage';
 import Confirmation from './components/pages/confirmation';
 import './App.css';
+import { useInfoStore } from './components/zustand/info';
 
 const App = () => {
   const { activeTab, setActiveTab } = useActiveTabStore();
   const { user, checkAuth } = useAuthStore();
+  const { title1, title2 } = useInfoStore();
 
   // Vérifier l'authentification au chargement
   useEffect(() => {
@@ -42,7 +44,7 @@ const App = () => {
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center">
             <h1 onClick={handleAdminTab} className="sentana text-xl font-bold cursor-pointer">
-              <span className="text-[#D4AF37] ">SENTANA</span>BARBER
+              <span className="text-[#D4AF37] ">{title1}</span>{title2}
             </h1>
           </div>
           <div className="hidden md:flex items-center space-x-6">

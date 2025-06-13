@@ -1,33 +1,29 @@
-import image2 from "../../../public/image2.jpg";
-import image3 from "../../../public/image3.jpg";
-import image4 from "../../../public/image4.jpg";
-import image5 from "../../../public/image5.jpg";
-import souleymane from "../../../public/souleymane.jpg";
-import lamine from "../../../public/lamine.jpg";
-import lafkaid from "../../../public/lafkaid.jpg";
-
-
-// import image6 from "../../../public/image6.jpg"
 export const services = [
     {
         name: "Coupe Classique",
-        price: "1000",
-        image: image2
+        price: "3000",
+        image: 'image2.jpg'
     },
     {
         name: "Barbe Complète",
-        price: "1000",
-        image: image3
+        price: "3000",
+        image: 'image3.jpg'
     },
     {
         name: "Coupe & Barbe",
-        price: "1500",
-        image: image4
+        price: "5000",
+        image: 'image4.jpg'
     },
     {
         name: "Soin Visage",
-        price: "2000",
-        image: image5
+        price: "3000",
+        image: 'image5.jpg'
+    }
+    ,
+    {
+        name: "Rendez-vous à domicile",
+        price: "5000",
+        image: 'barber.jpg'
     }
 ];
 export const testimonials = [
@@ -35,21 +31,21 @@ export const testimonials = [
         name: "Souleymane",
         rating: "5.0",
         comment: "Service impeccable, ambiance détendue et résultat parfait. Je recommande vivement ce salon pour tous les hommes qui cherchent une coupe de qualité.",
-        avatar: souleymane,
+        avatar: 'souleymane.jpg',
         since: "2022"
     },
     {
         name: "Lafkaid",
         rating: "5.0",
         comment: "Les barbiers sont de vrais artistes. J'ai enfin trouvé mon salon attitré après des années de recherche. Prix raisonnable pour la qualité du service.",
-        avatar: lafkaid,
+        avatar: 'lafkaid.jpg',
         since: "2022"
     },
     {
         name: "Lamine",
         rating: "4.9",
         comment: "Excellente expérience à chaque visite. L'équipe prend le temps de comprendre ce que vous voulez et donne de bons conseils. Le café offert est un plus appréciable.",
-        avatar: lamine,
+        avatar: 'lamine.jpg',
         since: "2022"
     }
 ];
