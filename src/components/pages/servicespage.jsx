@@ -71,9 +71,9 @@ export const ServicesPage = () => {
                                     <span><i className="far fa-clock mr-2"></i>{service.duration}</span>
                                     <span className="text-lg font-semibold text-[#1B264F]">{service.price}</span>
                                 </div>
-                                <button onClick={() => handleSubmit(service)} className="cursor-pointer w-full py-2 bg-[#D4AF37] text-[#1A1A1A] font-medium rounded-button hover:bg-opacity-90 transition-colors">
+                                {/* <button onClick={() => handleSubmit(service)} className="cursor-pointer w-full py-2 bg-[#D4AF37] text-[#1A1A1A] font-medium rounded-button hover:bg-opacity-90 transition-colors">
                                     Réserver
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     ))}
