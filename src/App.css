@@ -1,8 +1,11 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
 
 body, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, select, label, span, div {
     font-family: 'Montserrat', sans-serif !important;
+}
+main{
+    padding-bottom: 0;
 }
 
 .focus {

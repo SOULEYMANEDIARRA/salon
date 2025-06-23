@@ -174,9 +174,9 @@ export const HomePage = () => {
                 </div>
             </div>
             {/* CTA */}
-            <div className="relative py-16 bg-[#1A1A1A] text-white">
+            <div className="relative py-16 bg-[#1B264F] text-white mb-20">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4">PRÊT POUR UNE NOUVELLE COUPE?</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-4">PRÊT POUR UNE NOUVELLE COUPE ?</h2>
                     <p className="mb-8 max-w-2xl mx-auto">Réservez dès maintenant votre rendez-vous et profitez de l'expertise de nos barbiers professionnels pour un look impeccable.</p>
                     <button onClick={() => setActiveTab('reservation')} className="px-6 py-3 bg-[#D4AF37] text-[#1A1A1A] font-medium text-lg rounded-button hover:bg-opacity-90 transition-colors cursor-pointer">
                         Réserver un rendez-vous

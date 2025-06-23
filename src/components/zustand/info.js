@@ -12,6 +12,8 @@ export const useInfoStore = create((set) => {
         email: "abdoulayesidibe26@gmail.com",
         SALON_COORDS: [12.578766, -8.005986], // Remplace par la localisation exacte si besoin
         SALON_ADDRESS,
-        GOOGLE_MAPS_URL: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SALON_ADDRESS)}`
+        GOOGLE_MAPS_URL: `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(SALON_ADDRESS)}`,
+        Maker: "Souleymane Diarra",
+        portfolio: "https://souleymane.vercel.app/",
     };
 });

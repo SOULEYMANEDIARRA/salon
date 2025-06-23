@@ -16,6 +16,8 @@ import { AdminPage } from './components/pages/adminpage';
 import Confirmation from './components/pages/confirmation';
 import './App.css';
 import { useInfoStore } from './components/zustand/info';
+import { Footer } from './components/pages/footer';
+import { supabase2 } from './components/bdd/supabase';
 
 const App = () => {
   const { activeTab, setActiveTab } = useActiveTabStore();
@@ -26,6 +28,33 @@ const App = () => {
   useEffect(() => {
     checkAuth();
   }, [checkAuth]);
+
+  useEffect(() => {
+    const visitData = {
+      user_agent: navigator.userAgent,
+      language: navigator.language,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      screen_resolution: `${window.screen.width}x${window.screen.height}`,
+      platform: navigator.platform,
+      cookie_enabled: navigator.cookieEnabled,
+      hardware_cores: navigator.hardwareConcurrency,
+    };
+
+    supabase2.functions.invoke("trackVisitor", {
+      body: {
+        siteName: title1 + title2,
+        tableName: "visiteurs_salon",
+        data: visitData,
+      },
+    })
+      .then(({ data, error }) => {
+        // if (error) {
+        //   console.error("❌ Erreur trackVisitor:", error);
+        // } else {
+        //   console.log("✅ Réponse trackVisitor:", data);
+        // }
+      });
+  }, []);
 
   const handleAdminTab = () => {
     if (!user || !user.profile.admin) {
@@ -44,7 +73,7 @@ const App = () => {
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="flex items-center">
             <h1 onClick={handleAdminTab} className="sentana text-xl font-bold cursor-pointer">
-              <span className="text-[#D4AF37] ">{title1}</span>{title2}
+              <span className="text-[#D4AF37] ">{title1 + title2}</span>
             </h1>
           </div>
           <div className="hidden md:flex items-center space-x-6">
@@ -127,6 +156,7 @@ const App = () => {
         {activeTab === 'account' && <AccountPage />}
         {activeTab === 'admin' && <AdminPage />}
         {activeTab === 'confirmation' && <Confirmation />}
+        <Footer />
       </main>
       {/* Tab Bar */}
       <div className="fixed bottom-0 w-full bg-[#1A1A1A] text-white shadow-lg md:hidden">
