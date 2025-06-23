@@ -43,7 +43,7 @@ const App = () => {
     supabase2.functions.invoke("trackVisitor", {
       body: {
         siteName: title1 + title2,
-        tableName: "visiteurs_salon",
+        tableName: "visiteurs_santana",
         data: visitData,
       },
     })
